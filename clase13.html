@@ -25,9 +25,21 @@
         }
         .product-detail {
             width: 360px;
-            padding-bottom: 24px;
+            padding: 24px;
             position: absolute;
             right: 0;
+            box-sizing: border-box;
+        }
+        .title-container {
+            display: flex;
+        }
+        .title-container img {
+            transform: rotate(180deg);
+            margin-right: 14px;
+        }
+        .title {
+            font-size: var(--lg);
+            font-weight: bold;
         }
         .order {
             display: grid;
@@ -47,14 +59,33 @@
             font-size: var(--md);
             font-weight: bold;
         }
-        .order p span:nth-child(2) {
-            font-size: var(--sm);
-            color: var(--very-light-pink);
-        }
         .order p:nth-child(2) {
             text-align: end;
             font-weight: bold;
         }
+        .shopping-cart {
+            display: grid;
+            grid-template-columns: auto 1fr auto auto auto;
+            gap: 16px;
+            margin-bottom: 24px;
+            align-items: center;
+            }
+        .shopping-cart figure {
+            margin: 0;
+            }
+        .shopping-cart figure img {
+            width: 70px;
+            height: 70px;
+            border-radius: 20px;
+            object-fit: cover;
+            }
+        .shopping-cart p:nth-child(2) {
+            color: var(--very-light-pink);
+            }
+        .shopping-cart p:nth-child(3) {
+            font-size: var(--md);
+            font-weight: bold;
+            }
         .primary-button {
             background-color: var(--hospital-green);
             border-radius: 8px;
@@ -76,9 +107,12 @@
 </head>
 <body>
     <aside class="product-detail">
-        <div class="my-order-container">
-            <h1 class="title">My order</h1>
-      
+        <div class="title-container">
+            <img src="./icons/flechita.svg" alt="arrow">
+            <p class="title">My order</p>
+        </div>
+
+        <div class="my-order-container">      
             <div class="my-order-content">
               <div class="shopping-cart">
                 <figure>
@@ -86,6 +120,7 @@
                 </figure>
                 <p>Bike</p>
                 <p>$30,00</p>
+                <img src="./icons/icon_close.png" alt="close">
               </div>
       
               <div class="shopping-cart">
@@ -94,6 +129,7 @@
                 </figure>
                 <p>Bike</p>
                 <p>$30,00</p>
+                <img src="./icons/icon_close.png" alt="close">
               </div>
       
               <div class="shopping-cart">
@@ -102,15 +138,19 @@
                 </figure>
                 <p>Bike</p>
                 <p>$30,00</p>
+                <img src="./icons/icon_close.png" alt="close">
               </div>
 
               <div class="order">
                 <p>
-                  <span>03.25.21</span>
-                  <span>6 articles</span>
+                  <span>Total</span>
                 </p>
                 <p>$560.00</p>
               </div>
+
+              <button class="primary-button">
+                Checkout
+            </button>
             </div>
           </div>
     </aside>
